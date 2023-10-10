@@ -26,6 +26,7 @@ jobs:
         git config --local user.name "GitHub Action"
         git add *.html
         git commit -m "Add generated HTML files"
-        git remote set-url origin https://x-access-token:${{ secrets.MY_GITHUB_TOKEN }}@github.com/MufengNiu/JupyerTest.git
         git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 
