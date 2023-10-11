@@ -16,7 +16,7 @@ jobs:
         persist-credentials: false
         fetch-depth: 0
 
-    - name: Convert Markdown to HTML (example using pandoc)
+    - name: Convert Markdown to HTML
       run: |
         sudo apt-get install pandoc
         mkdir -p _build/html
