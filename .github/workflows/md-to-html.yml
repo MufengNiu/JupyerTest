@@ -28,7 +28,9 @@ jobs:
         sudo apt-get install pandoc
         mkdir -p _build/html
         for file in $(find . -name "*.md"); do
-            pandoc $file -o ./_build/html/${file%.md}.html
+            if [ "$file" != "./README.md" ]; then
+                pandoc $file -o ./_build/html/${file%.md}.html
+            fi
         done
     
     - name: Commit generated HTML files
