@@ -13,25 +13,28 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
       with:
-        persist-credentials: false # Ensures we use the token we provide for push, not GITHUB_TOKEN
-        fetch-depth: 0 # Get all history so we can push correctly.
+        persist-credentials: false
+        fetch-depth: 0
 
     - name: Convert Markdown to HTML (example using pandoc)
       run: |
         sudo apt-get install pandoc
+        mkdir -p _build/html
         for file in $(find . -name "*.md"); do
-            pandoc $file -o ${file%.md}.html
+            pandoc $file -o ./_build/html/${file%.md}.html
         done
     
     - name: Commit generated HTML files
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "github-actions[bot]"
-        git add *.html
+        git add _build/html/*.html
         git commit -m "Add generated HTML files"
 
-    - name: Push changes
-      uses: ad-m/github-push-action@master
+    # Deploy to GitHub Pages (push to the main branch)
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3.8.0
       with:
-        github_token: ${{ secrets.MY_GITHUB_TOKEN }}
-        branch: ${{ github.main }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_build/html
+        branch: main
