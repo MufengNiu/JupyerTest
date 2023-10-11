@@ -19,7 +19,7 @@ jobs:
     - name: Generate index.md
       run: |
         echo "# My HTML Files" > index.md
-        for file in $(find . -name "*.md" -not -name "index.md"); do
+        for file in $(find . -name "*.md" -not -name "index.md" -not -name "README.md"); do
             echo "- [${file%.md}](${file%.md}.html)" >> index.md
         done
 
