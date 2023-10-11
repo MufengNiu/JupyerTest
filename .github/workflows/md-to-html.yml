@@ -16,6 +16,13 @@ jobs:
         persist-credentials: false
         fetch-depth: 0
 
+    - name: Generate index.md
+      run: |
+        echo "# My HTML Files" > index.md
+        for file in $(find . -name "*.md" -not -name "index.md"); do
+            echo "- [${file%.md}](${file%.md}.html)" >> index.md
+        done
+
     - name: Convert Markdown to HTML
       run: |
         sudo apt-get install pandoc
@@ -31,7 +38,7 @@ jobs:
         git add _build/html/*.html
         git commit -m "Add generated HTML files"
 
-    # Deploy to GitHub Pages (push to the main branch)
+    # Deploy to GitHub Pages (push to the gh-pages branch)
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.8.0
       with:
