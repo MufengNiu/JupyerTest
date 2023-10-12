@@ -60,9 +60,8 @@ jobs:
         git config --global user.email "actions@github.com"
         git config --global user.name "GitHub Actions"
         git add .
-        git commit -m "Automated updates from GitHub Actions" || echo "No changes to commit"
-        git push
-    
+        git commit -m "Automated updates from GitHub Actions"
+
     # Deploy to GitHub Pages (push to the gh-pages branch)
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.8.0
