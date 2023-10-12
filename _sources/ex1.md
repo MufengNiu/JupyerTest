@@ -1,6 +1,6 @@
 # Markdown Documenttttt
 
-Hello, this is a simple Markdown document that can be converted to HTML.
+Hi, this is a simple Markdown document that can be converted to HTML.
 
 ## Intro
 
