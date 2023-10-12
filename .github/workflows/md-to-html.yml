@@ -66,6 +66,14 @@ jobs:
             fi
         done
 
+    - name: Debug generated TOC
+      run: |
+        cat JupyterBook/_toc.yml
+        
+    - name: Debug markdown files in JupyterBook
+      run: |
+        ls -l JupyterBook/*.md
+
     # Build the Jupyter Book
     - name: Build Jupyter Book
       run: |

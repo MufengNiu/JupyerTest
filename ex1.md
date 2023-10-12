@@ -8,7 +8,7 @@ Markdown is a lightweight markup language with plain-text-formatting syntax. Its
 
 ## Features
 
-Here's a list of some basic Markdown syntax:
+Here's a list of some basic Markdown syntax:::
 
 1. **Bold text** with `**` or `__`.
 2. *Italic text* with `*` or `_`.
