@@ -34,6 +34,13 @@ jobs:
     - name: Build Jupyter Book
       run: |
         jupyter-book build .
+    
+    - name: Commit generated files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "github-actions[bot]"
+        git add _toc.yml _build/html/*
+        git commit -m "Auto-update JupyterBook files"
 
     # Deploy to GitHub Pages (push to the gh-pages branch)
     - name: Deploy to GitHub Pages
