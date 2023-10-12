@@ -62,7 +62,7 @@ jobs:
             if [[ "$file" != "JupyterBook/intro.md" && "$file" != "JupyterBook/README.md" ]]; then
                 baseName=$(basename -- "$file")
                 noExtName="${baseName%.*}"
-                echo "    - file: $noExtName" >> JupyterBook/_toc.yml  # Add a dash before file
+                echo "    - file: $noExtName" >> JupyterBook/_toc.yml  
             fi
         done
 
