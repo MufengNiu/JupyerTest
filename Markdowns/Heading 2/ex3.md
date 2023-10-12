@@ -1,4 +1,4 @@
 # EX3
 
-**Bold Text**
+**Bold Textttt**
 *Italic Textttt*

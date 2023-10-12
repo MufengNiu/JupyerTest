@@ -60,16 +60,15 @@ jobs:
                 if [ -f "$dir/overview.md" ]; then
                     echo "  - caption: $heading" >> JupyterBook/_toc.yml
                     echo "    chapters:" >> JupyterBook/_toc.yml
-                    echo "    - file: $heading/overview" >> JupyterBook/_toc.yml
-                    echo "    - caption: overview" >> JupyterBook/_toc.yml
-                    echo "      sections:" >> JupyterBook/_toc.yml
+                    echo "      - file: $heading/overview" >> JupyterBook/_toc.yml
+                    echo "        sections:" >> JupyterBook/_toc.yml
 
                     # Loop through markdown files in the directory excluding overview.md
                     for file in "$dir"/*.md; do
                         if [[ "$file" != "$dir/overview.md" ]]; then
                             baseName=$(basename -- "$file")
                             noExtName="${baseName%.*}"
-                            echo "        - file: $heading/$noExtName" >> JupyterBook/_toc.yml
+                            echo "          - file: $heading/$noExtName" >> JupyterBook/_toc.yml
                         fi
                     done
                 else
