@@ -32,35 +32,41 @@ jobs:
             pip install jupyter-book
         fi
 
-    # # Copy markdown files (except README.md) from root to the Jupyter Book directory
-    # # Prepare files for Jupyter Book by ensuring a match between root and mynewbook/
-    # - name: Prepare files for Jupyter Book
-    #   run: |
-    #     rm -f mynewbook/*.md
+    # Copy markdown files (except README.md) from root to the Jupyter Book directory
+    # Prepare files for Jupyter Book by ensuring a match between root and mynewbook/
+    - name: Prepare files for Jupyter Book
+      run: |
+        rm -f mynewbook/*.md
         
-    #     for file in *.md; do
-    #         if [ "$file" != "README.md" ]; then
-    #             cp $file mynewbook/
-    #         fi
-    #     done
+        for file in *.md; do
+            if [ "$file" != "README.md" ]; then
+                cp $file mynewbook/
+            fi
+        done
 
-    # # Generate TOC (you can skip this if you manually maintain _toc.yml)
-    # - name: Generate TOC
-    #   run: |
-    #     jupyter-book toc from-project mynewbook > mynewbook/_toc.yml
+    # Generate TOC (you can skip this if you manually maintain _toc.yml)
+    - name: Generate TOC
+      run: |
+        jupyter-book toc from-project mynewbook > mynewbook/_toc.yml
        
     # Build the Jupyter Book
     - name: Build Jupyter Book
       run: |
         jupyter-book build JupyterBook
 
-    # # Commit and push changes if any exist
-    # - name: Commit and push changes
-    #   run: |
-    #     git config --global user.email "actions@github.com"
-    #     git config --global user.name "GitHub Actions"
-    #     git add .
-    #     git commit -m "Automated updates from GitHub Actions"
+    # Commit and push changes if any exist
+    - name: Commit and push changes
+      run: |
+        git config --global user.email "actions@github.com"
+        git config --global user.name "GitHub Actions"
+        git add .
+        git commit -m "Automated updates from GitHub Actions"
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.MY_GITHUB_TOKEN }}
+        branch: ${{ github.main }}
 
     # Deploy to GitHub Pages (push to the gh-pages branch)
     - name: Deploy to GitHub Pages
