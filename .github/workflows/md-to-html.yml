@@ -63,7 +63,6 @@ jobs:
                 baseName=$(basename -- "$file")
                 noExtName="${baseName%.*}"
                 # Set the title based on the filename
-                echo "  - title: $noExtName" >> JupyterBook/_toc.yml
                 echo "    file: $noExtName" >> JupyterBook/_toc.yml
             fi
         done
