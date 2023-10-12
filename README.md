@@ -1,1 +1,1 @@
-https://mufengniu.github.iooooo/
+https://mufengniu.github.io/

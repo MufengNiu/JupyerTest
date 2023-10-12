@@ -50,12 +50,23 @@ jobs:
             fi
         done
 
-
-    # Generate TOC (you can skip this if you manually maintain _toc.yml)
+    # Generate TOC 
     - name: Generate TOC
       run: |
-        jupyter-book toc from-project JupyterBook > JupyterBook/_toc.yml
-       
+        # Remove the existing _toc.yml
+        rm -f JupyterBook/_toc.yml
+        
+        # Create a new _toc.yml
+        echo "root: intro" > JupyterBook/_toc.yml
+        echo "entries:" >> JupyterBook/_toc.yml
+        for file in JupyterBook/*.md; do
+            if [[ "$file" != "JupyterBook/intro.md" && "$file" != "JupyterBook/README.md" ]]; then
+                baseName=$(basename -- "$file")
+                noExtName="${baseName%.*}"
+                echo "- file: $noExtName" >> JupyterBook/_toc.yml
+            fi
+        done
+
     # Build the Jupyter Book
     - name: Build Jupyter Book
       run: |
