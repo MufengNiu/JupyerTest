@@ -4,7 +4,7 @@ on:
   push:
     paths:
     - '**.md'
-    - '!mynewbook/**'
+    - '!JupyterBook/**'
 
 jobs:
   build:
@@ -33,21 +33,28 @@ jobs:
         fi
 
     # Copy markdown files (except README.md) from root to the Jupyter Book directory
-    # Prepare files for Jupyter Book by ensuring a match between root and mynewbook/
+    # Prepare files for Jupyter Book by ensuring a match between root and JupyterBook/
     - name: Prepare files for Jupyter Book
       run: |
-        rm -f mynewbook/*.md
-        
-        for file in *.md; do
-            if [ "$file" != "README.md" ]; then
-                cp $file mynewbook/
+        # Remove all .md files in JupyterBook/ except intro.md
+        for file in JupyterBook/*.md; do
+            if [ "$file" != "JupyterBook/intro.md" ]; then
+                rm -f "$file"
             fi
         done
+
+        # Copy all .md files from root to JupyterBook/ except README.md
+        for file in *.md; do
+            if [ "$file" != "README.md" ]; then
+                cp $file JupyterBook/
+            fi
+        done
+
 
     # Generate TOC (you can skip this if you manually maintain _toc.yml)
     - name: Generate TOC
       run: |
-        jupyter-book toc from-project mynewbook > mynewbook/_toc.yml
+        jupyter-book toc from-project JupyterBook > JupyterBook/_toc.yml
        
     # Build the Jupyter Book
     - name: Build Jupyter Book
