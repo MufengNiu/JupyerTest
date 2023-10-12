@@ -67,7 +67,8 @@ jobs:
                 for file in "$dir"/*.md; do
                     baseName=$(basename -- "$file")
                     noExtName="${baseName%.*}"
-                    echo "      - file: $noExtName" >> JupyterBook/_toc.yml
+                    # Append the directory name to the file path
+                    echo "      - file: $heading/$noExtName" >> JupyterBook/_toc.yml
                 done
             fi
         done
