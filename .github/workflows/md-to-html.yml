@@ -52,7 +52,7 @@ jobs:
     # Build the Jupyter Book
     - name: Build Jupyter Book
       run: |
-        jupyter-book build mynewbook
+        jupyter-book build JupyterBook
 
     # # Commit and push changes if any exist
     # - name: Commit and push changes
