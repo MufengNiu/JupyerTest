@@ -1,8 +1,8 @@
 # EX2
 
-- Item a
-- Item b
-- Item c
+- Item aa
+- Item bb
+- Item cc
 
 1. First item
 2. Second item
