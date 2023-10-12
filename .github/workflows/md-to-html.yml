@@ -54,13 +54,6 @@ jobs:
         echo "root: intro" >> JupyterBook/_toc.yml
         echo "parts:" >> JupyterBook/_toc.yml
         
-        # Handle markdown files at the root of /Markdowns (treat them as top-level chapters)
-        for file in Markdowns/*.md; do
-            baseName=$(basename -- "$file")
-            noExtName="${baseName%.*}"
-            echo "  - file: $noExtName" >> JupyterBook/_toc.yml
-        done
-
         # Loop through each folder in /Markdowns
         for dir in Markdowns/*; do
             if [ -d "$dir" ]; then
