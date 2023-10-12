@@ -64,6 +64,10 @@ jobs:
             fi
         done
 
+    - name: Clean old build
+      run: |
+        rm -rf JupyterBook/_build
+        
     # Build the Jupyter Book
     - name: Build Jupyter Book
       run: |
