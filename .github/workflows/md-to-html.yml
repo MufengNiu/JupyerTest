@@ -29,7 +29,7 @@ jobs:
 
     - name: Auto-generate TOC
       run: |
-        jupyter-book toc from-project .
+        jupyter-book toc from-project . > _toc.yml
 
     - name: Build Jupyter Book
       run: |
