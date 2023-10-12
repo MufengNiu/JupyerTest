@@ -2,13 +2,13 @@
 
 Hello, this is a simple Markdown document that can be converted to HTML.
 
-## Introduction
+## Intro
 
 Markdown is a lightweight markup language with plain-text-formatting syntax. Its key design goal is readability – that the language be readable as-is, without looking like it's been marked up with tags or formatting instructions.
 
 ## Features
 
-Here's a list of some basic Markdown syntax:
+Here's a list of some basic Markdown syntax:::
 
 1. **Bold text** with `**` or `__`.
 2. *Italic text* with `*` or `_`.
