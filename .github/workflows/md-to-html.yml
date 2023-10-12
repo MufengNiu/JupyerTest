@@ -37,7 +37,7 @@ jobs:
     - name: Prepare files for Jupyter Book
       run: |
         # Remove markdown files in mynewbook/ (assuming no integral .md files to Jupyter Book in there)
-        rm mynewbook/*.md
+        rm -f mynewbook/*.md
         
         # Copy markdown files (except README.md) from root to the mynewbook/ directory
         for file in *.md; do
