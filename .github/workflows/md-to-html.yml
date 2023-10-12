@@ -57,8 +57,9 @@ jobs:
         rm -f JupyterBook/_toc.yml
         
         # Create a new _toc.yml
-        echo "root: intro" > JupyterBook/_toc.yml
-        echo "entries:" >> JupyterBook/_toc.yml
+        echo "format: jb-book" > JupyterBook/_toc.yml
+        echo "root: intro" >> JupyterBook/_toc.yml
+        echo "chapters:" >> JupyterBook/_toc.yml
         for file in JupyterBook/*.md; do
             if [[ "$file" != "JupyterBook/intro.md" && "$file" != "JupyterBook/README.md" ]]; then
                 baseName=$(basename -- "$file")
