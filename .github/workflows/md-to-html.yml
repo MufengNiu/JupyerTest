@@ -67,5 +67,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3.8.0
       with:
         github_token: ${{ secrets.MY_GITHUB_TOKEN }}
-        publish_dir: ./mynewbook/_build/html
+        publish_dir: ./JupyterBook/_build/html
         publish_branch: gh-pages
