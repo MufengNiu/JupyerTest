@@ -1,6 +1,7 @@
 format: jb-book
 root: intro
 chapters:
+    - file: EXAMPLE4
     - file: ex1
     - file: ex2
     - file: ex3
