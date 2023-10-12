@@ -27,6 +27,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install jupyter-book
 
+    - name: Auto-generate TOC
+      run: |
+        jupyter-book toc from-project .
+
     - name: Build Jupyter Book
       run: |
         jupyter-book build .
