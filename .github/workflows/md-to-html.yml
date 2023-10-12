@@ -78,6 +78,11 @@ jobs:
                 done
             fi
         done
+    
+    - name: Print TOC for Debugging
+      run: |
+        echo "Content of _toc.yml:"
+        cat JupyterBook/_toc.yml
 
     # Build the Jupyter Book
     - name: Build Jupyter Book
