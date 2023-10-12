@@ -1,5 +1,4 @@
-root: example
+root: intro
 entries:
-- file: intro
-- file: testmarkdown
-
+- file: ex1
+- file: ex2
