@@ -3,7 +3,8 @@ name: Build and Deploy Jupyter Book
 on:
   push:
     paths:
-    - '**.md'
+    - 'Markdowns/*.md'
+    - 'FrontPage/*.md'
     - '!JupyterBook/**'
 
 jobs:
@@ -38,14 +39,11 @@ jobs:
       run: |
         rm -f JupyterBook/*.md
 
-        # Copy intro.md from FrontPage/ to JupyterBook/
         cp FrontPage/intro.md JupyterBook/
 
-        # Copy all .md files from root to JupyterBook/ except README.md
-        for file in *.md; do
-            if [ "$file" != "README.md" ]; then
-                cp $file JupyterBook/
-            fi
+        # Copy all .md files from root to JupyterBook/ 
+        for file in Markdowns/*.md; do
+            cp $file JupyterBook/
         done
 
     # Generate TOC 
