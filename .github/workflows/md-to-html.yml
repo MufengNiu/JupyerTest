@@ -62,17 +62,9 @@ jobs:
             if [[ "$file" != "JupyterBook/intro.md" && "$file" != "JupyterBook/README.md" ]]; then
                 baseName=$(basename -- "$file")
                 noExtName="${baseName%.*}"
-                echo "    file: $noExtName" >> JupyterBook/_toc.yml
+                echo "    - file: $noExtName" >> JupyterBook/_toc.yml  # Add a dash before file
             fi
         done
-
-    - name: Debug generated TOC
-      run: |
-        cat JupyterBook/_toc.yml
-        
-    - name: Debug markdown files in JupyterBook
-      run: |
-        ls -l JupyterBook/*.md
 
     # Build the Jupyter Book
     - name: Build Jupyter Book
