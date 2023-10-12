@@ -55,7 +55,7 @@ jobs:
       run: |
         # Remove the existing _toc.yml
         rm -f JupyterBook/_toc.yml
-        
+            
         # Create a new _toc.yml
         echo "format: jb-book" > JupyterBook/_toc.yml
         echo "root: intro" >> JupyterBook/_toc.yml
@@ -64,7 +64,9 @@ jobs:
             if [[ "$file" != "JupyterBook/intro.md" && "$file" != "JupyterBook/README.md" ]]; then
                 baseName=$(basename -- "$file")
                 noExtName="${baseName%.*}"
-                echo "- file: $noExtName" >> JupyterBook/_toc.yml
+                # Set the title based on the filename
+                echo "  - title: $noExtName" >> JupyterBook/_toc.yml
+                echo "    file: $noExtName" >> JupyterBook/_toc.yml
             fi
         done
 
