@@ -1,6 +1,6 @@
-# EX 444444
+# EX 44444
 
-![Mufffff's Picture](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrdcLAaeBsLvJT7VsjZGH7S-ZVciP0_2-leJvwn7NGWg&s)
+![John's Picture](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrdcLAaeBsLvJT7VsjZGH7S-ZVciP0_2-leJvwn7NGWg&s)
 
 ## Bio
 
@@ -8,3 +8,10 @@ Hello! My name is John Doe. I'm a software developer from New York with over 10 
 
 - **Location**: New York, USA
 - **Education**: M.S. in Computer Science from XYZ University
+
+## Skills
+
+- Web Development
+- Mobile App Development
+- Cloud Computing
+- Machine Learning
