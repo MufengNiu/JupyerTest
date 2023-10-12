@@ -72,6 +72,16 @@ jobs:
             fi
         done
 
+    - name: Check JupyterBook file structure
+      run: |
+        echo "Checking the file structure in JupyterBook:"
+        if command -v tree &> /dev/null; then
+            tree JupyterBook
+        else
+            echo "The 'tree' command isn't available. Using 'find' instead."
+            find JupyterBook -print
+        fi
+
     - name: Print TOC for Debugging
       run: |
         echo "Content of _toc.yml:"
