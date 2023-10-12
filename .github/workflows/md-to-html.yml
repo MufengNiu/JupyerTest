@@ -36,12 +36,10 @@ jobs:
     # Prepare files for Jupyter Book by ensuring a match between root and JupyterBook/
     - name: Prepare files for Jupyter Book
       run: |
-        # Remove all .md files in JupyterBook/ except intro.md
-        for file in JupyterBook/*.md; do
-            if [ "$file" != "JupyterBook/intro.md" ]; then
-                rm -f "$file"
-            fi
-        done
+        rm -f JupyterBook/*.md
+
+        # Copy intro.md from FrontPage/ to JupyterBook/
+        cp FrontPage/intro.md JupyterBook/
 
         # Copy all .md files from root to JupyterBook/ except README.md
         for file in *.md; do
