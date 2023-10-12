@@ -26,7 +26,11 @@ jobs:
     - name: Install Jupyter Book and dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install jupyter-book
+        
+        # Check if jupyter-book is installed
+        if ! command -v jupyter-book &> /dev/null; then
+            pip install jupyter-book
+        fi
 
     # Copy markdown files (except README.md) from root to the Jupyter Book directory
     # Prepare files for Jupyter Book by ensuring a match between root and mynewbook/
