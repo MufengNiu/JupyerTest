@@ -3,6 +3,7 @@ root: intro
 parts:
   - caption: Heading 1
     chapters:
+      - file: Heading 1/ap1
       - file: Heading 1/ex1
   - caption: Heading 2
     chapters:
