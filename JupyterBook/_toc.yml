@@ -14,3 +14,6 @@ parts:
           - file: Heading 2/ex4
           - file: Heading 2/ex5
           - file: Heading 2/ex6
+  - caption: Heading 3
+    chapters:
+      - file: Heading 3/ap3
