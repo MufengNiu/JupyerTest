@@ -43,8 +43,7 @@ jobs:
         cp FrontPage/intro.md JupyterBook/
 
         rsync -av --include='*.md' --include='*/' --exclude='*' Markdowns/ JupyterBook/
-
-    # Generate TOC 
+    
     - name: Generate TOC
       run: |
 
@@ -56,33 +55,35 @@ jobs:
         for dir in Markdowns/*; do
             if [ -d "$dir" ]; then
                 heading=$(basename -- "$dir")
-                # Check for the existence of overview.md in the directory
-                if [ -f "$dir/overview.md" ]; then
-                    echo "  - caption: $heading" >> JupyterBook/_toc.yml
-                    echo "    chapters:" >> JupyterBook/_toc.yml
-                    echo "      - file: $heading/overview" >> JupyterBook/_toc.yml
-                    echo "        sections:" >> JupyterBook/_toc.yml
+                echo "  - caption: $heading" >> JupyterBook/_toc.yml
+                echo "    chapters:" >> JupyterBook/_toc.yml
 
-                    # Loop through markdown files in the directory excluding overview.md
-                    for file in "$dir"/*.md; do
-                        if [[ "$file" != "$dir/overview.md" ]]; then
-                            baseName=$(basename -- "$file")
-                            noExtName="${baseName%.*}"
-                            echo "          - file: $heading/$noExtName" >> JupyterBook/_toc.yml
-                        fi
-                    done
-                else
-                    # If no overview.md exists, list the markdown files directly under the heading caption
-                    echo "  - caption: $heading" >> JupyterBook/_toc.yml
-                    echo "    chapters:" >> JupyterBook/_toc.yml
-                    for file in "$dir"/*.md; do
-                        baseName=$(basename -- "$file")
-                        noExtName="${baseName%.*}"
-                        echo "      - file: $heading/$noExtName" >> JupyterBook/_toc.yml
-                    done
-                fi
+                # Check for nested directories with overview.md
+                for sub_dir in "$dir"/*; do
+                    if [ -d "$sub_dir" ] && [ -f "$sub_dir/overview.md" ]; then
+                        sub_heading=$(basename -- "$sub_dir")
+                        echo "      - file: $heading/$sub_heading/overview" >> JupyterBook/_toc.yml
+                        echo "        sections:" >> JupyterBook/_toc.yml
+                        # Loop through other markdown files in the sub-directory excluding overview.md
+                        for file in "$sub_dir"/*.md; do
+                            if [[ "$file" != "$sub_dir/overview.md" ]]; then
+                                baseName=$(basename -- "$file")
+                                noExtName="${baseName%.*}"
+                                echo "          - file: $heading/$sub_heading/$noExtName" >> JupyterBook/_toc.yml
+                            fi
+                        done
+                    fi
+                done
+
+                # Add markdown files from the first directory layer
+                for file in "$dir"/*.md; do
+                    baseName=$(basename -- "$file")
+                    noExtName="${baseName%.*}"
+                    echo "      - file: $heading/$noExtName" >> JupyterBook/_toc.yml
+                done
             fi
         done
+
 
     - name: Check JupyterBook file structure
       run: |
