@@ -1,19 +1,23 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Heading 1
+  - caption: 1. Texts
     chapters:
-      - file: Heading 1/ap1
-      - file: Heading 1/ex1
-  - caption: Heading 2
+      - file: 1. Texts/Texts
+  - caption: 2. Concordance
     chapters:
-      - file: Heading 2/overview
-        sections:
-          - file: Heading 2/ex2
-          - file: Heading 2/ex3
-          - file: Heading 2/ex4
-          - file: Heading 2/ex5
-          - file: Heading 2/ex6
-  - caption: Heading 3
+      - file: 2. Concordance/Concordance
+  - caption: 3. Word Frequencies
     chapters:
-      - file: Heading 3/ap3
+      - file: 3. Word Frequencies/Word Frequencies
+  - caption: 4. Divergence
+    chapters:
+      - file: 4. Divergence/Divergence
+  - caption: 5. Burrows Zeta
+    chapters:
+      - file: 5. Burrows Zeta/Burrows' Zeta
+  - caption: 6. Case Studies
+    chapters:
+      - file: 6. Case Studies/Case 1
+      - file: 6. Case Studies/Case 2
+      - file: 6. Case Studies/Case 3
