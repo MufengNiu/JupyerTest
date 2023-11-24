@@ -32,6 +32,10 @@ jobs:
         if ! command -v jupyter-book &> /dev/null; then
             pip install jupyter-book
         fi
+    
+    - name: Install Dependencies from requirements.txt
+      run: |
+        pip install -r requirements.txt
 
     - name: Prepare files for Jupyter Book, Clean old build
       run: |
