@@ -4,6 +4,7 @@ on:
   push:
     paths:
     - 'Markdowns/**.md'
+    - 'Markdowns/**.ipynb' 
     - 'FrontPage/*.md'
     - '!JupyterBook/**'
 
@@ -32,17 +33,16 @@ jobs:
             pip install jupyter-book
         fi
 
-    # Copy all markdown files from JupyterBook to the JupyterBook directory
-    - name:  Clean old build Prepare files for Jupyter Book, Clean old build
+    - name: Prepare files for Jupyter Book, Clean old build
       run: |
-
         rm -rf JupyterBook/_build
         rm -f JupyterBook/*.md
+        rm -f JupyterBook/*.ipynb  
         rm -f JupyterBook/_toc.yml
 
         cp FrontPage/intro.md JupyterBook/
 
-        rsync -av --include='*.md' --include='*/' --exclude='*' Markdowns/ JupyterBook/
+        rsync -av --include='*.md' --include='*.ipynb' --include='*/' --exclude='*' Markdowns/ JupyterBook/  
     
     - name: Generate TOC
       run: |
@@ -65,7 +65,7 @@ jobs:
                         echo "      - file: $heading/$sub_heading/overview" >> JupyterBook/_toc.yml
                         echo "        sections:" >> JupyterBook/_toc.yml
                         # Loop through other markdown files in the sub-directory excluding overview.md
-                        for file in "$sub_dir"/*.md; do
+                        for file in "$sub_dir"/*.{md,ipynb}; do
                             if [[ "$file" != "$sub_dir/overview.md" ]]; then
                                 baseName=$(basename -- "$file")
                                 noExtName="${baseName%.*}"
@@ -76,7 +76,7 @@ jobs:
                 done
 
                 # Add markdown files from the first directory layer
-                for file in "$dir"/*.md; do
+                for file in "$dir"/*.{md,ipynb}; do
                     baseName=$(basename -- "$file")
                     noExtName="${baseName%.*}"
                     echo "      - file: $heading/$noExtName" >> JupyterBook/_toc.yml
