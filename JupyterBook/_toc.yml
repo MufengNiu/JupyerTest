@@ -4,20 +4,28 @@ parts:
   - caption: 1. Texts
     chapters:
       - file: 1. Texts/Texts
+      - file: 1. Texts/*
   - caption: 2. Concordance
     chapters:
       - file: 2. Concordance/Concordance
+      - file: 2. Concordance/*
   - caption: 3. Word Frequencies
     chapters:
       - file: 3. Word Frequencies/Word Frequencies
+      - file: 3. Word Frequencies/*
   - caption: 4. Divergence
     chapters:
       - file: 4. Divergence/Divergence
+      - file: 4. Divergence/*
   - caption: 5. Burrows Zeta
     chapters:
       - file: 5. Burrows Zeta/Burrows' Zeta
+      - file: 5. Burrows Zeta/*
   - caption: 6. Case Studies
     chapters:
       - file: 6. Case Studies/Case 1
       - file: 6. Case Studies/Case 2
       - file: 6. Case Studies/Case 3
+      - file: 6. Case Studies/EX1
+      - file: 6. Case Studies/EX2
+      - file: 6. Case Studies/EX3
