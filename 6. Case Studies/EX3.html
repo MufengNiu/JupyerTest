@@ -188,9 +188,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Case Studies</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Case%201.html">Case 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Case%201.html">Case 11111</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Case%202.html">Case 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Case%203.html">Case 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Case%203.html">Case 3333</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EX1.html">Top 10 most frequent 6-grams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EX2.html">The size of character parts from largest to smallest</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Frequencies of “has” and “hath”</a></li>
@@ -409,19 +409,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">requests</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="n">FixedLocator</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Next, we set up the API endpoint here. In this example, we use the <ins>Word Frequencies API</ins>.</p>
 <div class="cell docutils container">
@@ -491,6 +478,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
+</pre></div>
+</div>
+</div>
 </div>
 <p>Now, we have the response data ready from Word Frequencies API. We firstly want to have a glance of the proportions of words “has” and “hath” used in each year from a table. We are going to create the tabular data from response data. Read more about the <ins>response data</ins> of Word Frequencies API.</p>
 <p>We will have two header rows for the table. The first header row will display the play names, and the second will list the years of the plays. Instead using the word frequency numbers, we will calculate the proportions of words and display them in each column.</p>
@@ -551,6 +543,8 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="overflow-x: auto; margin-top: 40px;"><table border="1"><tr><th style="white-space: nowrap;">Word</td><th style="white-space: nowrap;">1 Henry IV Q1 (1)</td><th style="white-space: nowrap;">Antony and Cleopatra (1)</td><th style="white-space: nowrap;">Comedy of Errors (1)</td><th style="white-space: nowrap;">Coriolanus (1)</td><th style="white-space: nowrap;">Hamlet Q2 (1)</td><th style="white-space: nowrap;">Henry V F (1)</td><th style="white-space: nowrap;">Julius Caesar (1)</td><th style="white-space: nowrap;">King Lear Q1 (1)</td><th style="white-space: nowrap;">Love's Labor's Lost Q1 (1)</td><th style="white-space: nowrap;">Macbeth (1)</td><th style="white-space: nowrap;">Merchant of Venice Q1 (1)</td><th style="white-space: nowrap;">Midsummer Night's Dream Q1 (1)</td><th style="white-space: nowrap;">Much Ado About Nothing Q1 (1)</td><th style="white-space: nowrap;">Othello Q1 (1)</td><th style="white-space: nowrap;">Richard II Q1 (1)</td><th style="white-space: nowrap;">Richard III Q1 (1)</td><th style="white-space: nowrap;">Romeo and Juliet Q2 (1)</td><th style="white-space: nowrap;">Tempest (1)</td><th style="white-space: nowrap;">Twelfth Night (1)</td><th style="white-space: nowrap;">Winter's Tale (1)</td></tr><tr><th style="white-space: nowrap;">Year</td><th style="white-space: nowrap;">1597</td><th style="white-space: nowrap;">1606</td><th style="white-space: nowrap;">1592</td><th style="white-space: nowrap;">1608</td><th style="white-space: nowrap;">1600</td><th style="white-space: nowrap;">1599</td><th style="white-space: nowrap;">1599</td><th style="white-space: nowrap;">1605</td><th style="white-space: nowrap;">1595</td><th style="white-space: nowrap;">1606</td><th style="white-space: nowrap;">1596</td><th style="white-space: nowrap;">1595</td><th style="white-space: nowrap;">1598</td><th style="white-space: nowrap;">1604</td><th style="white-space: nowrap;">1595</td><th style="white-space: nowrap;">1593</td><th style="white-space: nowrap;">1595</td><th style="white-space: nowrap;">1611</td><th style="white-space: nowrap;">1601</td><th style="white-space: nowrap;">1611</td></tr><tr><td>hath</td><td>0.2059%</td><td>0.1726%</td><td>0.2299%</td><td>0.1826%</td><td>0.2186%</td><td>0.218%</td><td>0.1782%</td><td>0.2072%</td><td>0.1767%</td><td>0.3021%</td><td>0.2386%</td><td>0.2304%</td><td>0.3468%</td><td>0.1583%</td><td>0.32%</td><td>0.226%</td><td>0.349%</td><td>0.1556%</td><td>0.1748%</td><td>0.1675%</td></tr><tr><td>has</td><td>0.0081%</td><td>0.0883%</td><td>0.0%</td><td>0.1289%</td><td>0.0336%</td><td>0.0306%</td><td>0.0153%</td><td>0.0438%</td><td>0.0%</td><td>0.1104%</td><td>0.0094%</td><td>0.0%</td><td>0.0187%</td><td>0.1385%</td><td>0.0%</td><td>0.0%</td><td>0.0081%</td><td>0.0539%</td><td>0.0999%</td><td>0.1236%</td></tr></table></div></div></div>
 </div>
 <p><em>&#64;Hugh: more insights about the table can be described here</em></p>
 <p>Next, we will plot the usage of words “has” and “hath” over the years in a line chart. We will firstly aggregate the word frequencies in each year. Each block from the response data will have the <code class="docutils literal notranslate"><span class="pre">metadata</span></code> about the play. We will use the metadata <code class="docutils literal notranslate"><span class="pre">Date</span> <span class="pre">of</span> <span class="pre">first</span> <span class="pre">performance</span></code> to get the years of play.</p>
@@ -617,6 +611,9 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fcab2678539cc74bd01a7e0c84270e62132b703d64557329effcf6f145c7111d.png" src="../_images/fcab2678539cc74bd01a7e0c84270e62132b703d64557329effcf6f145c7111d.png" />
 </div>
 </div>
 <p><em>&#64;Hugh: some insights about the chart</em></p>

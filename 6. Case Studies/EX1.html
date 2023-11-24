@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The size of character parts from largest to smallest" href="EX2.html" />
-    <link rel="prev" title="Case 3" href="Case%203.html" />
+    <link rel="prev" title="Case 3333" href="Case%203.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -189,9 +189,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Case Studies</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Case%201.html">Case 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Case%201.html">Case 11111</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Case%202.html">Case 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Case%203.html">Case 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Case%203.html">Case 3333</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Top 10 most frequent 6-grams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EX2.html">The size of character parts from largest to smallest</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EX3.html">Frequencies of “has” and “hath”</a></li>
@@ -408,18 +408,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">requests</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Next, we set up the API endpoint here. In this example, we use the <ins>Word Frequencies API</ins>.</p>
 <div class="cell docutils container">
@@ -487,6 +475,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
+</pre></div>
+</div>
+</div>
 </div>
 <p>Now, we have the response data ready from Word Frequencies API. We firstly want to display the top most frequent 6-grams in a table that we can know what they are and the frequencies in each text from the text sets. We are going to firstly unpack the response data and make it into a tabular data format. Note that the words returned from the Word Frequencies API are sorted from the highest to lowest frequency by default, and the orders of words returned from blocks are consistent. Read more about the <ins>response data</ins> of Word Frequencies API.</p>
 <div class="cell docutils container">
@@ -551,6 +544,8 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="overflow-x: auto; margin-top: 40px;"><table border="1"><tr><th style="white-space: nowrap;">Word</td><th style="white-space: nowrap;">1 Henry IV Q1 (1)</td><th style="white-space: nowrap;">Antony and Cleopatra (1)</td><th style="white-space: nowrap;">Comedy of Errors (1)</td><th style="white-space: nowrap;">Coriolanus (1)</td><th style="white-space: nowrap;">Hamlet Q2 (1)</td><th style="white-space: nowrap;">Henry V F (1)</td><th style="white-space: nowrap;">Julius Caesar (1)</td><th style="white-space: nowrap;">King Lear Q1 (1)</td><th style="white-space: nowrap;">Love's Labor's Lost Q1 (1)</td><th style="white-space: nowrap;">Macbeth (1)</td><th style="white-space: nowrap;">Merchant of Venice Q1 (1)</td><th style="white-space: nowrap;">Midsummer Night's Dream Q1 (1)</td><th style="white-space: nowrap;">Much Ado About Nothing Q1 (1)</td><th style="white-space: nowrap;">Othello Q1 (1)</td><th style="white-space: nowrap;">Richard II Q1 (1)</td><th style="white-space: nowrap;">Richard III Q1 (1)</td><th style="white-space: nowrap;">Romeo and Juliet Q2 (1)</td><th style="white-space: nowrap;">Tempest (1)</td><th style="white-space: nowrap;">Twelfth Night (1)</td><th style="white-space: nowrap;">Winter's Tale (1)</td></tr><tr><td>hey.ho.the.wind.and.the</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>5</td><td>0</td></tr><tr><td>ho.the.wind.and.the.rain</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>5</td><td>0</td></tr><tr><td>for.the.rain.it.raineth.every</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>4</td><td>0</td></tr><tr><td>i.could.find.in.my.heart</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr><tr><td>the.rain.it.raineth.every.day</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>4</td><td>0</td></tr><tr><td>with.hey.ho.the.wind.and</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>4</td><td>0</td></tr><tr><td>chooseth.me.shall.get.as.much</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>get.as.much.as.he.deserves</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>give.me.a.cup.of.sack</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>how.now.what.is.the.matter</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Word Types</td><td>20652</td><td>18922</td><td>11606</td><td>22193</td><td>24180</td><td>22265</td><td>15732</td><td>19937</td><td>16224</td><td>13638</td><td>17985</td><td>13925</td><td>16424</td><td>19539</td><td>18105</td><td>21799</td><td>20236</td><td>13374</td><td>15245</td><td>21399</td></tr><tr><td>Size</td><td>20692</td><td>18928</td><td>11610</td><td>22209</td><td>24192</td><td>22299</td><td>15762</td><td>19944</td><td>16310</td><td>13659</td><td>18033</td><td>13939</td><td>16453</td><td>19547</td><td>18132</td><td>21865</td><td>20276</td><td>13381</td><td>15319</td><td>21411</td></tr></table></div></div></div>
 </div>
 <p>Now we have our table rendered. From the table, we can see that two 6-grams each appear 5 times in a single play; one 6-gram appears in 4 different plays. The 6-grams can be overlapping (“hey ho the wind and the”, “ho the wind and the rain”).</p>
 <p><em>&#64;Hugh: more insights about the table can be described here</em></p>
@@ -581,6 +576,9 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/19ef26463b6a3994fcbae793c280a52d4c605d3bfb85d77927aca516e5e67a4a.png" src="../_images/19ef26463b6a3994fcbae793c280a52d4c605d3bfb85d77927aca516e5e67a4a.png" />
 </div>
 </div>
 <p><em>&#64;Hugh: some insights about the chart</em></p>
@@ -622,7 +620,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Case 3</p>
+        <p class="prev-next-title">Case 3333</p>
       </div>
     </a>
     <a class="right-next"
